@@ -8,7 +8,7 @@
 
 ### Screenshots 
 <p align="center">
-    <img src = "./screenshots/sc1.png" width = "350" title = "Screenshot 1" alt = "Screenshot 1"/>
-    <img src = "./screenshots/sc2.png" width = "350" title = "Screenshot 2" alt = "Screenshot 2"/>
-    <img src = "./screenshots/sc3.png" width = "350" title = "Screenshot 3" alt = "Screenshot 3"/>
+    <img src = "./screenshots%20/sc1.png?raw=true" width = "350" title = "Screenshot 1" alt = "Screenshot 1"/>
+    <img src = "./screenshots%20/sc2.png?raw=true" width = "350" title = "Screenshot 2" alt = "Screenshot 2"/>
+    <img src = "./screenshots%20/sc3.png?raw=true" width = "350" title = "Screenshot 3" alt = "Screenshot 3"/>
 </p> 
