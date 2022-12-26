@@ -8,9 +8,9 @@
 
 ### Screenshots 
 <p align="center">
-    <img src = "./screenshots%20/sc1.png?raw=true" width = "350" title = "Screenshot 1" alt = "Screenshot 1"/>
+    <img src = "./screenshots%20/sc1.png?raw=true" width = "550" title = "Screenshot 1" alt = "Screenshot 1"/>
     <br/>
-    <img src = "./screenshots%20/sc2.png?raw=true" width = "350" title = "Screenshot 2" alt = "Screenshot 2"/>
+    <img src = "./screenshots%20/sc2.png?raw=true" width = "550" title = "Screenshot 2" alt = "Screenshot 2"/>
     <br/>
-    <img src = "./screenshots%20/sc3.png?raw=true" width = "350" title = "Screenshot 3" alt = "Screenshot 3"/>
+    <img src = "./screenshots%20/sc3.png?raw=true" width = "550" title = "Screenshot 3" alt = "Screenshot 3"/>
 </p> 
