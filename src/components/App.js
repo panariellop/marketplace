@@ -94,6 +94,7 @@ class App extends Component {
                 : <Main 
                     createProduct = {this.createProduct} 
                     products = {this.state.products} 
+                    account = {this.state.account}
                     purchaseProduct = {this.purchaseProduct}/> 
               }
             </main>
