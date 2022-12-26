@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
-import logo from '../logo.png';
 import './App.css';
+import Marketplace from "../abis/Marketplace.json"
+import Navbar from "./Navbar"
 
 class App extends Component {
 
@@ -27,6 +28,16 @@ class App extends Component {
   async loadBlockchainData(){
     const accounts = await window.web3.eth.getAccounts()
     this.setState({account: accounts[0] }) 
+    const networkID = await window.web3.eth.net.getId()
+    const networkData = Marketplace.networks[networkID]
+    if(networkData){
+      const marketplace = window.web3.eth.Contract(Marketplace.abi, networkData.address) 
+      this.setState({marketplace: marketplace})
+      this.setState({loading: false})
+    }else{
+      window.alert("Marketplace contract not deployed to the detected network")
+    }
+    
   }
 
   constructor(props){
@@ -42,47 +53,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="/"
-            rel="noopener noreferrer"
-          >
-            Piero's Marketplace
-          </a>
-          <ul className = "navbar-nav px-3">
-            <li className = "nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className='text-white'><span id = "account">{this.state.account}</span></small>
-            </li>
-          </ul> 
-        </nav>
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" />
-                </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
+        <Navbar account = {this.state.account} /> 
+        
+        <div className = "container-fluid mt-5">
+          <div className = "row">
+            <main role = "main" className = "col-lg-12 d-flex">
+              <div id = "content">
+                <h1>Add Product</h1> 
               </div>
             </main>
           </div>
         </div>
+        
+
+
       </div>
     );
   }
